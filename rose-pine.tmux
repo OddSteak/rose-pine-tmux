@@ -165,9 +165,9 @@ main() {
     window_directory="$(get_tmux_option "@rose_pine_show_pane_directory" "")"
     readonly window_directory
 
-    local window_separator 
+    local window_separator
     window_separator="$(get_tmux_option "@rose_pine_window_separator" "")"
-    readonly window_separator 
+    readonly window_separator
 
     local default_window_behavior
     default_window_behavior="$(get_tmux_option "@rose_pine_default_window_behavior" "")"
@@ -261,10 +261,10 @@ main() {
     local custom_window_sep_current="#I#[fg=$thm_gold,bg=""]$window_separator#[fg=$thm_gold,bg=""]#W"
 
     local right_separator
-    right_separator="$(get_tmux_option "@rose_pine_right_separator" "  ")"
+    right_separator="$(get_tmux_option "@rose_pine_right_separator" " > ")"
 
     local left_separator
-    left_separator="$(get_tmux_option "@rose_pine_left_separator" "  ")"
+    left_separator="$(get_tmux_option "@rose_pine_left_separator" " > ")"
 
     local field_separator
     # NOTE: Don't remove
@@ -291,13 +291,13 @@ main() {
     readonly show_session=" #[fg=#{?client_prefix,$thm_love,$thm_text}]$current_session_icon #[fg=$thm_text]#S "
 
     local show_user
-    readonly show_user="#[fg=$thm_iris]#(whoami)#[fg=$thm_subtle]$right_separator#[fg=$thm_subtle]$username_icon"
+    readonly show_user="$username_icon#[fg=$thm_iris]#(whoami)#[fg=$thm_subtle]$right_separator#[fg=$thm_subtle]"
 
     local show_host
-    readonly show_host="$spacer#[fg=$thm_text]#H#[fg=$thm_subtle]$right_separator#[fg=$thm_subtle]$hostname_icon"
+    readonly show_host="$hostname_icon$spacer#[fg=$thm_text]#H#[fg=$thm_subtle]$right_separator#[fg=$thm_subtle]"
 
     local show_date_time
-    readonly show_date_time=" #[fg=$thm_foam]$date_time#[fg=$thm_subtle]$right_separator#[fg=$thm_subtle]$date_time_icon "
+    readonly show_date_time="$date_time_icon #[fg=$thm_foam]$date_time#[fg=$thm_subtle]$right_separator#[fg=$thm_subtle]"
 
     local show_directory
     readonly show_directory="$spacer#[fg=$thm_subtle]$current_folder_icon #[fg=$thm_rose]#{b:pane_current_path} "
