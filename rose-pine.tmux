@@ -233,7 +233,7 @@ main() {
     readonly hostname_icon
 
     local date_time_icon
-    date_time_icon="$(get_tmux_option "@rose_pine_date_time_icon" "󰃰")"
+    date_time_icon="$(get_tmux_option "@rose_pine_date_time_icon" " ")"
     readonly date_time_icon
 
     local current_folder_icon
@@ -297,7 +297,7 @@ main() {
     readonly show_host="$hostname_icon$spacer#[fg=$thm_text]#H#[fg=$thm_subtle]$right_separator#[fg=$thm_subtle]"
 
     local show_date_time
-    readonly show_date_time=" $date_time_icon #[fg=$thm_foam]$date_time#[fg=$thm_subtle]$right_separator#[fg=$thm_subtle]"
+    readonly show_date_time=" $date_time_icon#[fg=$thm_foam]$date_time#[fg=$thm_subtle]$right_separator#[fg=$thm_subtle]"
 
     local show_directory
     readonly show_directory="$spacer#[fg=$thm_subtle]$current_folder_icon #[fg=$thm_rose]#{b:pane_current_path} "
